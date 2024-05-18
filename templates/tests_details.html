@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ test.1 }}
+{% endblock %}
+
+{% block header %}
+    {{ test.1 }}
+{% endblock %}
+
+{% block content %}
+    <div class="pb-3">
+        {{ test.2 }}
+    </div>
+    {% if user_answer %}
+        {% if answer_right %}
+            <p class="pt-4 text-success">
+                Ваш ответ правильный.
+            </p>
+        {% else %}
+            <p class="pt-4 text-danger">
+                Ваш ответ неправильный.
+            </p>
+        {% endif %}
+    {% endif %}
+    <div class="py-4">
+        <form method="post">
+            <label for="answer">Ваш ответ:</label>
+            <input type="text" class="form-control" name="answer" id="answer" placeholder="Введите ответ..." value="{{ user_answer }}" required>
+            <br>
+            <button type="submit" class="btn btn-primary" formaction="">Проверить</button>
+        </form>
+    </div>
+    <div class="pt-5 text-center">
+        <a href="/tests-list" class="btn btn-primary">
+            Обратно к списку упражнений
+        </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+    English learning
+{% endblock %}
+
+{% block header %}
+    Образовательная система для изучения английского языка
+{% endblock %}
+
+{% block content %}
+    <div class="row g-4 row-cols-1 row-cols-lg-3 px-3">
+        <div class="col d-flex">
+            <div class="py-4 px-5 info-block">
+                <h3 class="fs-2">Теория</h3>
+                <p>
+                    Изучайте правила английского языка,
+                    чтобы правильно составлять предложения.
+                </p>
+                <p>
+                    <small>
+                        Количество уроков: {{ theory_count }}
+                    </small>
+                </p>
+                <a href="/theory-list" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="py-4 px-5 info-block">
+                <h3 class="fs-2">Упражнения</h3>
+                <p>
+                    Отработайте свои навыки, чтобы автоматизировать
+                    использование правил.
+                </p>
+                <p>
+                    <small>
+                        Количество упражнений: {{ tests_count }}
+                    </small>
+                </p>
+                <a href="/tests-list" class="btn btn-primary">
+                    Перейти
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="py-4 px-5 info-block">
+                <h3 class="fs-2">Слова</h3>
+                <p>
+                    Ведите собственный словарь.
+                    Изучайте новые слова, повторяйте старые.
+                </p>
+                <p>
+                    <small>
+                        Количество слов: {{ words_count }}
+                    </small>
+                </p>
+                <a href="/words-learn" class="btn btn-primary">
+                    Изучить
+                </a>
+                <a href="/words-list" class="btn btn-primary">
+                    Список
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

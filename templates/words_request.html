@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Результат добавления слова
+{% endblock %}
+
+{% block header %}
+    {% if success %}
+        Слово успешно добавлено!
+    {% else %}
+        Ошибка добавления
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-sm">
+        <p>Уважаемый пользователь,<br/>
+            Ваш запрос завершился <span class="fw-bold">{% if success %}успешно{% else %}ошибкой{% endif %}</span>.
+        </p>
+
+        {% if success %}
+            <p class="text-success">
+                {{ comment }}
+            </p>
+        {% else %}
+            <p class="text-danger">
+                {{ comment }}
+            </p>
+        {% endif %}
+        <br>
+        <a href="/words-add" class="btn btn-primary">
+            Обратно к форме
+        </a>
+        <a href="/words-list" class="btn btn-primary">
+            К списку слов
+        </a>
+    </div>
+
+{% endblock %}

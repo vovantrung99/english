@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Добавить новое слово
+{% endblock %}
+
+{% block header %}
+    Добавить новое слово
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="word">Слово:</label>
+        <input type="text" class="form-control" name="word" id="word" placeholder="Введите слово..." required>
+        <br>
+        <label for="translation">Перевод:</label>
+        <input type="text" class="form-control" name="translation" id="translation" placeholder="Введите перевод..." required>
+        <br>
+        <label for="comment">Комментарий:</label>
+        <input type="text" class="form-control" name="comment" id="comment" placeholder="Введите комментарий...">
+
+        <br>
+        <button type="submit" class="btn btn-primary" formaction="/words-send">Добавить</button>
+    </form>
+    <div class="pt-5 text-center">
+        <a href="/words-list" class="btn btn-primary">
+            Обратно к списку слов
+        </a>
+    </div>
+
+{% endblock %}

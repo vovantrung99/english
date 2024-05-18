@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Удалить слово
+{% endblock %}
+
+{% block header %}
+    Удалить слово
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <p>
+            Вы действительно хотите удалить выбранное слово?
+        </p>
+        <button type="submit" class="btn btn-primary" formaction="">Да, удалить</button>
+    </form>
+    <div class="pt-5 text-center">
+        <a href="/words-list" class="btn btn-primary">
+            Обратно к списку слов
+        </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'favicon.png' %}" rel="icon" type="image/png">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand" href="/"><img src="{% static 'logo.png'%}" height="70px"></a><br>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="flex-grow-0 collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/theory-list">Теория</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tests-list">Упражнения</a>
+        </li>
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Слова
+          </a>
+          <ul class="dropdown-menu" style="min-width: auto" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/words-learn">Изучить</a></li>
+            <li><a class="dropdown-item" href="/words-list">Список</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="p-5">
+    <header class="pb-2 border-bottom">
+      <h1>{% block header %}{% endblock %}</h1>
+    </header>
+    <main class="pt-5">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+<footer class="footer pt-3 mt-4 text-muted border-top text-center">© Created by Thung, 2024</footer>
+<script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>

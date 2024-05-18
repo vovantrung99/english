@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Уроки по английскому языку
+{% endblock %}
+
+{% block header %}
+    Уроки по английскому языку
+{% endblock %}
+
+{% block content %}
+    <div class="table-responsive">
+        <table class="table table-striped table-sm text-center">
+          <thead>
+            <tr>
+              <th scope="col" class="py-3">#</th>
+              <th scope="col" class="py-3">Название</th>
+              <th scope="col" class="py-3">О чем урок</th>
+              <th scope="col" class="py-3">Перейти</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cnt, title, short_text, text in theory %}
+            <tr>
+                <td class="py-3">{{ cnt }}</td>
+                <td class="py-3">{{ title }}</td>
+                <td class="py-3">{{ short_text }}</td>
+                <td class="py-3">
+                    <a href="/theory-details?id={{ cnt }}" class="btn btn-primary">
+                        Перейти
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+{% endblock %}

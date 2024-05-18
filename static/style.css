@@ -1,0 +1,13 @@
+nav.navbar {
+    background: rgb(179,255,78);
+    background: linear-gradient(90deg, rgba(179,255,78,1) 0%, rgba(221,251,93,0.55) 35%, rgba(116,232,255,1) 100%);
+}
+
+.table {
+    --bs-table-striped-bg: aliceblue;
+}
+
+.info-block {
+    background: aliceblue;
+    border-radius: 10px;
+}
